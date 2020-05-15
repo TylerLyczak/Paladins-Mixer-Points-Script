@@ -31,6 +31,8 @@ const puppeteer = require('puppeteer');
         console.log('Please enter Microsoft password');
         process.exit(1);
     }
+
+    // Sets the email/password for STDIN
     const email_address = cliArgs[0];
     const password = cliArgs[1];
 
@@ -54,6 +56,7 @@ const puppeteer = require('puppeteer');
         'priority': 'Medium',
     };
 
+    // Sets the cookie
     await page.setCookie(cookie);
 
     await page.setRequestInterception(true);
